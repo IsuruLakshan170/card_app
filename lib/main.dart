@@ -31,6 +31,7 @@ class _NinjaCardState extends State<NinjaCard> {
         child: Icon(Icons.add),
         backgroundColor: Colors.grey[800],
       ),
+
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
@@ -99,9 +100,55 @@ class _NinjaCardState extends State<NinjaCard> {
                 ),
               ),
             ],
-          )
+          ),
+            Row(
+              children: [
+                Container(
+                  child: RaisedButton(
+                    child: Text('Next'),
+                    color: Colors.deepPurple,
+
+                    onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder:(context)=>Home2()));
+                    },
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Home2 extends StatefulWidget {
+  const Home2({Key? key}) : super(key: key);
+
+  @override
+  State<Home2> createState() => _Home2State();
+}
+
+class _Home2State extends State<Home2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+      appBar:AppBar(
+        title:Text('Infomation'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+      ),
+      body:
+      Center(
+        child: Center(
+         child:Image.asset('assets/ninja.jpg'),
+      ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        child:Text('Click'),
+        backgroundColor: Colors.deepPurple,
       ),
     );
   }
